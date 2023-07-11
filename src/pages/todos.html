@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="h-fit min-h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <title>Document</title>
+  </head>
+  <body class="h-screen m-0 p-0 overflow-auto">
+    <div class="bg-[#303030] m-0 p-0 h-full" id="mainContainer">
+      <nav class="flex items-center justify-between flex-wrap bg-[#008080] p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <span class="font-semibold text-xl tracking-tight">Todo App</span>
+        </div>
+        <div class="block lg:hidden">
+          <button
+            class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+          >
+            <svg
+              class="fill-current h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <a
+              href="index.html"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Home
+            </a>
+            <a
+              href="todos.html?page=1"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Todos
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="container flex flex-col justify-center items-center text-white py-3 mx-auto gap-3"
+        id="todosContainer"
+      >
+        <div
+          class="bg-[#008080] h-24 p-3 rounded flex flex-col justify-between w-full md:w-1/2 2xl:w-1/3 hidden"
+        >
+          <div class="flex justify-between">
+            <div class="flex w-2/3 gap-3">
+              <input type="checkbox" name="" id="" />
+              <p>Checking email</p>
+              <p>31/10/2021</p>
+            </div>
+            <div>
+              <i
+                class="bi bi-pencil-square text-2xl hover:text-teal-200 hover:cursor-pointer"
+              ></i>
+              <i
+                class="bi bi-trash text-2xl hover:text-teal-200 hover:cursor-pointer"
+              ></i>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Consequatur, temporibus.
+          </p>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto py-3" id="paginationPart">
+        <nav aria-label="Page navigation example" class="flex justify-center">
+          <ul class="inline-flex -space-x-px mx-auto" id="pagination_ul">
+            <li class="hidden">
+              <a
+                href="#"
+                class="bg-[#008080] border border-gray-300 text-white hover:bg-gray-100 hover:text-gray-100 ml-0 rounded-l-lg leading-tight py-2 px-3 dark:bg-[#e94560] dark:border-gray-100 dark:text-gray-400 dark:hover:bg-gray-100 dark:hover:text-white"
+                >Previous</a
+              >
+            </li>
+            <li class="hidden">
+              <a
+                href="#"
+                class="text-teal-200 text-${textColor} bg-[#e94560] border border-gray-300 hover:bg-gray-100 hover:text-gray-100 leading-tight py-2 px-3 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >1</a
+              >
+            </li>
+            <li class="hidden">
+              <a
+                href="#"
+                class="bg-[#e9456060] border border-gray-300 text-white hover:bg-gray-100 hover:text-gray-100 rounded-r-lg leading-tight py-2 px-3 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >Next</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div
+      id="modal"
+      class="md:w-1/3 z-10 absolute w-1/2 md:left-1/3 left-1/4 top-52 h-fit bg-[#e94560] flex flex-col gap-6 py-2 text-white hidden"
+    >
+      <div class="border-b px-3 flex gap-2">
+        <i
+          class="bi bi-exclamation-triangle-fill text-[#E94560] text-lg pb-2"
+        ></i
+        ><span class="text-lg">Delete</span>
+      </div>
+      <div class="flex flex-col justify-center px-3 border-b">
+        <p>Do you want to delete this item?</p>
+        <div class="flex gap-3 pb-2">
+          <span id="modal__todoTitle">Checking email</span
+          ><span id="modal__todoDate">31/10/2021</span>
+        </div>
+      </div>
+      <div class="flex justify-around items-center">
+        <button
+          id="modal__deleteBtn"
+          class="w-1/3 border-white border py-2 rounded hover:bg-gray-100 hover:text-gray-100"
+        >
+          Delete</button
+        ><button
+          id="modal__cancelBtn"
+          class="w-1/3 border-white border py-2 rounded hover:bg-gray-100 hover:text-gray-100"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <script src="/src/scripts/script2.js" type="module"></script>
+  </body>
+</html>
